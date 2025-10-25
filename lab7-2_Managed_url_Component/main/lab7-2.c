@@ -11,14 +11,14 @@ static const char *TAG = "MAIN";
 
 void app_main(void)
 {
-    ESP_LOGI(TAG, "🚀 Lab 6.2: Multiple Source Files Demo");
+    ESP_LOGI(TAG, "🚀 Lab 7.2 Challenge: Managed + Local Components");
     ESP_LOGI(TAG, "📍 Main function from file: %s, line: %d", __FILE__, __LINE__);
     ESP_LOGI(TAG, "ESP-IDF Version: %s", esp_get_idf_version());
     
     // Initialize all modules
-    sensor_init();
-    display_init();
-    led_init();
+    sensor_init(); // This should come from the managed component
+    display_init(); // This should come from the local component
+    led_init(); // This should come from the local component
     
     display_show_message("System Starting...");
     
